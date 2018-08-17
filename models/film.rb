@@ -36,15 +36,15 @@ class Film
     SqlRunner.run(sql, values)
   end
 
-  # def customers()
-  #   sql = "SELECT films.* FROM films
-  #   INNER JOIN tickets
-  #   ON films.id = tickets.film_id
-  #   WHERE film_id = $1"
-  #   values = [@id]
-  #   result = SqlRunner.run(sql, values)
-  #   return Movie.map_items(result)
-  # end
+  def customers()
+    sql = "SELECT customers.* FROM customers
+    INNER JOIN tickets
+    ON customers.id = tickets.customer_id
+    WHERE film_id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    return Customer.map_items(result)
+  end
 
   def self.map_items(film_data)
     film_data.map { |film| Film.new(film)  }
