@@ -32,7 +32,7 @@ It's enough if you can call your methods in pry, don't worry about an interface.
   - Limit the available tickets for screenings.
   - Add any other extensions you think would be great to have at a cinema!
 
-### PDA Reminder:
+### PDA Reminder: DONE
 
 Remember to gather evidence for your PDA this week. This should only take 5 minutes:
 
