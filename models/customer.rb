@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner.rb')
+require_relative('ticket.rb')
 
 class Customer
 
@@ -25,7 +26,7 @@ class Customer
 
   def update()
     sql = "UPDATE customers
-    SET title = $1, genre = $2, tickets = $4
+    SET name = $1, funds = $2, tickets = $4
     WHERE id = $3 "
     values = [@name, @funds, @id, @tickets]
     SqlRunner.run(sql, values)
@@ -49,12 +50,22 @@ class Customer
     return Film.map_items(result)
   end
 
-  def buy_ticket(ticket)
+  def buy_ticket(film)
+
+    pay(film.price)
+    @tickets += 1
+    ticket = Ticket.new({
+      'customer_id' => @id,
+      'film_id' => film.id
+      })
+    ticket.save
+    update
   end
+
 
   def pay(amount)
     return if can_pay?(amount) == false
-    @funds - amount
+    @funds -= amount
   end
 
   def can_pay?(amount)
