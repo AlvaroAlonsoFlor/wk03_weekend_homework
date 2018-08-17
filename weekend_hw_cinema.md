@@ -21,9 +21,9 @@ It's enough if you can call your methods in pry, don't worry about an interface.
   - CRUD actions (create, read, update, delete) customers, films and tickets.
   - Show which films a customer has booked to see, and see which customers are coming to see one film.
 
-### Basic extensions:
-  - Buying tickets should decrease the funds of the customer by the price
-  - Check how many tickets were bought by a customer
+### Basic extensions: DONE
+  - Buying tickets should decrease the funds of the customer by the price DONE
+  - Check how many tickets were bought by a customer. DONE
   - Check how many customers are going to watch a certain film DONE
 
 ### Advanced extensions:
