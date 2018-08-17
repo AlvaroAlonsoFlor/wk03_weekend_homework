@@ -10,7 +10,7 @@ class Customer
     @id = info['id'].to_i if info['id']
     @name = info['name']
     @funds = info['funds'].to_i
-    @tickets = 0
+    @tickets = info['tickets'].to_i
   end
 
   def save
@@ -54,12 +54,13 @@ class Customer
 
     pay(film.price)
     @tickets += 1
+    update
     ticket = Ticket.new({
       'customer_id' => @id,
       'film_id' => film.id
       })
     ticket.save
-    update
+
   end
 
 

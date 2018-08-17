@@ -9,12 +9,14 @@ Ticket.delete_all
 
 customer1 = Customer.new({
   'name' => 'Alvaro',
-  'funds' => 30
+  'funds' => 30,
+  'tickets' => 0
   })
 
 customer2 = Customer.new({
   'name' => 'Alison',
-  'funds' => 50
+  'funds' => 50,
+  'tickets' => 0
   })
 
 film1 = Film.new({
@@ -33,25 +35,28 @@ customer2.save
 film1.save
 film2.save
 
-ticket1 = Ticket.new({
-  'customer_id' => customer1.id,
-  'film_id' => film1.id
-  })
+customer1.buy_ticket(film1)
+customer2.buy_ticket(film1)
 
-ticket2 = Ticket.new({
-  'customer_id' => customer1.id,
-  'film_id' => film2.id
-  })
-
-ticket3 = Ticket.new({
-  'customer_id' => customer2.id,
-  'film_id' => film1.id
-  })
-
-
-ticket1.save
-ticket2.save
-ticket3.save
+# ticket1 = Ticket.new({
+#   'customer_id' => customer1.id,
+#   'film_id' => film1.id
+#   })
+#
+# ticket2 = Ticket.new({
+#   'customer_id' => customer1.id,
+#   'film_id' => film2.id
+#   })
+#
+# ticket3 = Ticket.new({
+#   'customer_id' => customer2.id,
+#   'film_id' => film1.id
+#   })
+#
+#
+# ticket1.save
+# ticket2.save
+# ticket3.save
 
 binding.pry
 nil
