@@ -46,6 +46,10 @@ class Film
     return Customer.map_items(result)
   end
 
+  def number_of_customers
+    return customers.count
+  end
+
   def self.map_items(film_data)
     film_data.map { |film| Film.new(film)  }
   end

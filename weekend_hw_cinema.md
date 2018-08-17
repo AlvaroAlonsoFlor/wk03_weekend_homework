@@ -24,7 +24,7 @@ It's enough if you can call your methods in pry, don't worry about an interface.
 ### Basic extensions:
   - Buying tickets should decrease the funds of the customer by the price
   - Check how many tickets were bought by a customer
-  - Check how many customers are going to watch a certain film
+  - Check how many customers are going to watch a certain film DONE
 
 ### Advanced extensions:
   - Create a screenings table that lets us know what time films are showing
