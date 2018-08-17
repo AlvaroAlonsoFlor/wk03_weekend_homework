@@ -48,6 +48,16 @@ class Customer
     return Film.map_items(result)
   end
 
+  def pay(amount)
+    return if can_pay?(amount) == false
+    @funds - amount
+  end
+
+  def can_pay?(amount)
+    return true if @funds >= amount
+    return false
+  end
+
   def self.map_items(customer_data)
     customer_data.map { |customer| Customer.new(customer)  }
   end
