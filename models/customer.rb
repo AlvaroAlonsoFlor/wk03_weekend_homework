@@ -52,7 +52,7 @@ class Customer
   end
 
   def buy_ticket(film, screening)
-
+    return if screening.is_full?
     pay(film.price)
     @tickets += 1
     update
