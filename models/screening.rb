@@ -1,7 +1,7 @@
 class Screening
 
   attr_reader :id
-  attr_accessor :film_id, :screening_time
+  attr_accessor :film_id, :screening_time, :seats
 
   def initialize(info)
     @id = info['id'].to_i if info['id']

@@ -58,6 +58,12 @@ class Film
     return Screening.map_items(result)
   end
 
+  def most_popular_time
+    screening = screenings.max_by { |screening| screening.seats - screening.seats_left }
+    return "Film: #{@title} Screening time: #{screening.screening_time} Tickets sold: #{screening.seats - screening.seats_left}"
+
+  end
+
   def self.map_items(film_data)
     film_data.map { |film| Film.new(film)  }
   end
