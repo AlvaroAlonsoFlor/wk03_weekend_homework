@@ -50,6 +50,11 @@ class Screening
     return seats_left
   end
 
+  def is_full?
+    return true if seats_left <= 0
+    return false
+  end
+
   def self.map_items(screening_data)
     screening_data.map { |screening| Screening.new(screening)  }
   end
