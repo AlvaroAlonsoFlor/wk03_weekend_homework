@@ -45,6 +45,11 @@ class Screening
     return Ticket.map_items(result)
   end
 
+  def seats_left
+    seats_left = @seats - tickets.count
+    return seats_left
+  end
+
   def self.map_items(screening_data)
     screening_data.map { |screening| Screening.new(screening)  }
   end
