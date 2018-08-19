@@ -50,7 +50,7 @@ class Customer
     return Film.map_items(result)
   end
 
-  def buy_ticket(film)
+  def buy_ticket(film, screening)
 
     pay(film.price)
     @tickets += 1
@@ -58,6 +58,7 @@ class Customer
     ticket = Ticket.new({
       'customer_id' => @id,
       'film_id' => film.id
+      'screening' => screeening.id
       })
     ticket.save
 

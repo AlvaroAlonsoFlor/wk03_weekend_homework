@@ -36,8 +36,8 @@ customer2.save
 film1.save
 film2.save
 
-customer1.buy_ticket(film1)
-customer2.buy_ticket(film1)
+customer1.buy_ticket(film1, screening1)
+customer2.buy_ticket(film1, screening2)
 
 screening1 = Screening.new({
   'film_id' => film1.id,
@@ -53,25 +53,6 @@ screening2 = Screening.new({
 screening1.save
 screening2.save
 
-# ticket1 = Ticket.new({
-#   'customer_id' => customer1.id,
-#   'film_id' => film1.id
-#   })
-#
-# ticket2 = Ticket.new({
-#   'customer_id' => customer1.id,
-#   'film_id' => film2.id
-#   })
-#
-# ticket3 = Ticket.new({
-#   'customer_id' => customer2.id,
-#   'film_id' => film1.id
-#   })
-#
-#
-# ticket1.save
-# ticket2.save
-# ticket3.save
 
 binding.pry
 nil
