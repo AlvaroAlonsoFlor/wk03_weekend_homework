@@ -50,6 +50,14 @@ class Film
     return customers.count
   end
 
+  def screenings()
+    sql = "SELECT * FROM screenings
+    WHERE film_id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    return Screening.map_items(result)
+  end
+
   def self.map_items(film_data)
     film_data.map { |film| Film.new(film)  }
   end
