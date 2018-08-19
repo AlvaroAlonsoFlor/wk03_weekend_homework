@@ -37,6 +37,17 @@ class Screening
     SqlRunner.run(sql, values)
   end
 
+# Tickets still not working properly, id problem
+  # def tickets()
+  #   sql = "SELECT customers.* FROM customers
+  #   INNER JOIN tickets
+  #   ON customers.id = tickets.customer_id
+  #   WHERE film_id = $1"
+  #   values = [@film_id]
+  #   result = SqlRunner.run(sql, values)
+  #   return Ticket.map_items(result)
+  # end
+
   def self.map_items(screening_data)
     screening_data.map { |screening| Screening.new(screening)  }
   end
