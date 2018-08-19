@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner.rb')
 require_relative('ticket.rb')
+require_relative('screening.rb')
 
 class Customer
 
@@ -57,8 +58,8 @@ class Customer
     update
     ticket = Ticket.new({
       'customer_id' => @id,
-      'film_id' => film.id
-      'screening' => screeening.id
+      'film_id' => film.id,
+      'screening_id' => screening.id
       })
     ticket.save
 
