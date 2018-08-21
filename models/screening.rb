@@ -6,7 +6,7 @@ class Screening
   def initialize(info)
     @id = info['id'].to_i if info['id']
     @film_id = info['film_id'].to_i
-    @screening_time = info['screening_time'].to_i
+    @screening_time = info['screening_time']
     @seats = info['seats'].to_i
   end
 

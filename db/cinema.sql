@@ -31,3 +31,5 @@ CREATE TABLE tickets (
   film_id INT8 REFERENCES films(id) ON DELETE CASCADE,
   screening_id INT8 REFERENCES screenings(id) ON DELETE CASCADE
 );
+
+-- I should have normalized film_id and take it from tickets. In the case the id changed we would have conflicts in our tables. Even though it was working, but for bigger databases that could have been a problem.
